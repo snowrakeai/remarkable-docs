@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[paperwidth=15.77cm, paperheight=42cm, margin=0pt]{geometry}
+\usepackage{tabularx, tikz, bm, pgffor, enumitem, amssymb, graphicx}
+
+\renewcommand{\seriesdefault}{\bfdefault}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength\extrarowheight{1cm}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\mycircle}{\tikz\draw[line width=1.5px] circle (5px);}
+\newcommand{\circles}{\mycircle \: \mycircle \: \mycircle}
+\newcommand{\entry}{\underline{\hspace{3cm}}}
+\newcommand{\myrow}{\entry & \circles & \circles & \circles & \circles & \circles \\}
+\newcommand{\pagei}[1]
+{
+	\vspace*{0mm}
+	{\large \hspace{3em} 2024 \hfill Week\texttt{\#}\:#1 \hspace{2em}} \\
+	\vspace{1cm}
+	\begin{tabularx}{\textwidth}{ p{3cm}YYYYYY}
+		\centering{Task} & 2 & 4 & 6 & 8 & 10 \\
+		\hline
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+		\myrow
+	\end{tabularx}
+
+	\hfill$\bm{\sum}\:$\underline{\hspace{1cm}} $\bm{[h]}$ \hspace{2cm} \\
+
+	\vspace{2em}
+	\hfill \textcolor{gray}{\scriptsize SnowRakeAi\textsuperscript{\texttrademark}\:} \\
+}
+\newcommand{\todoline}{\item \quad \underline{\hspace{0.74\paperwidth}}}
+\newcommand{\todopage}
+{
+	\par
+	\vspace{1em}
+	\begin{center}
+		{ \large Goals of the Week }
+	\end{center}
+	\vspace{2em}
+	\begin{itemize}[label=\scalebox{2.5}{$\square$}, itemsep=1cm, itemindent=4em]
+		\todoline
+		\todoline
+		\todoline
+		\todoline
+		\todoline
+		\todoline
+		\todoline
+		\todoline
+		\todoline
+	\end{itemize}
+}
+
+\begin{document}
+% \pagei{01}
+% \todopage
+\foreach \x in {01,02,03,04,05,06,07,08,09,10,...,52}{ \pagei{\x} \todopage \clearpage}
+\end{document}

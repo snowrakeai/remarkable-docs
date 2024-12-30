@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[paperwidth=15.77cm, paperheight=21cm, margin=0pt]{geometry}
+\usepackage{pgffor, multicol, xcolor}
+
+\renewcommand{\seriesdefault}{\bfdefault}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength\columnsep{1cm}
+
+\newcommand{\emptyline}{\underline{\hspace{7cm}}\\[0.56cm]}
+\newcommand{\dayi}[2]
+{
+	\vspace*{0mm}
+	{\large \hspace{3em} 2024 \hfill Week\texttt{\#}\:#1 \hspace{2em}} \\
+	\begin{center}
+		{ \vspace{-0.5cm} \huge #2 }
+	\end{center}
+	\vspace{1em}
+	\begin{multicols}{2}
+		\raggedleft
+		\foreach \n in {1,...,14} { \emptyline }
+		\vfill\null
+		\columnbreak
+		\raggedright
+		\foreach \n in {1,...,14} { \emptyline }
+	\end{multicols}
+	\vspace{-1.2cm}
+	\texttt{\quad Notes:}
+	\vfill
+	\hfill \textcolor{gray}{\scriptsize SnowRakeAi\textsuperscript{\texttrademark}\:} \\
+}
+
+\begin{document}
+% \dayi{01}{Monday}
+\foreach \x in {01,02,03,04,05,06,07,08,09,10,...,52}{
+	\foreach \day in {Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday}{
+		\dayi{\x}{\day} \clearpage}}
+\end{document}
