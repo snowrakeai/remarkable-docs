@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[paperwidth=15.77cm, paperheight=21cm, margin=0pt]{geometry}
+\usepackage{pgffor, multicol, xcolor}
+
+\renewcommand{\seriesdefault}{\bfdefault}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength\columnsep{1cm}
+
+\newcommand{\emptyline}{\underline{\hspace{7cm}}\\[0.56cm]}
+\newcommand{\weekpage}[1]
+{
+	\vspace*{0mm}
+	\large \hspace{3em} 2025 \hfill
+	\small Mon \! / \! Tue \! / \! Wed \! / \! Thr \! / \! Fri \! / \! Sat \! / \! Sun \hfill
+	\large Week\texttt{\#}\:\phantom{52} \hspace{2em} \\
+	\rule{\textwidth}{0.4pt}
+	\vfill
+	\textcolor{gray}{\scriptsize \qquad#1}
+	\hfill \textcolor{gray}{\scriptsize SnowRakeAi\textsuperscript{\texttrademark}\:} \\
+}
+
+\begin{document}
+%\weekpage{01}
+\foreach \x in {01,02,03,04,05,06,07,08,09,10,...,999}{
+		\weekpage{\x} \clearpage}
+\end{document}
